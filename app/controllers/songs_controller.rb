@@ -28,10 +28,9 @@ class SongsController < ApplicationController
 
     def update
         set_song
-        if @song.valid?
-            @song.update(song_params)
+        if @song.update(song_params) 
             redirect_to song_path(@song)
-        else
+        else 
             render :edit
         end
     end
